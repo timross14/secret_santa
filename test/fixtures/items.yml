@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_id: 1
+  text: MyString
+  intend_to_purchase: false
+  purchased: false
+
+two:
+  list_id: 1
+  text: MyString
+  intend_to_purchase: false
+  purchased: false

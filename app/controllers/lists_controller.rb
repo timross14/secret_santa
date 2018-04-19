@@ -10,6 +10,9 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    set_list
+    set_list_user(@list.user_id)
+    @item = Item.new
   end
 
   # GET /lists/new
@@ -51,8 +54,6 @@ class ListsController < ApplicationController
     end
   end
 
-  # DELETE /lists/1
-  # DELETE /lists/1.json
   def destroy
     @list.destroy
     respond_to do |format|
@@ -62,12 +63,14 @@ class ListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_list
       @list = List.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_list_user(user_id)
+      @user = User.find(user_id)
+    end
+
     def list_params
       params.require(:list).permit(:user_id)
     end

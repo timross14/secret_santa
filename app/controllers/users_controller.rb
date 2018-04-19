@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      user.create_list
       session[:user_id] = user.id
       redirect_to :root
     else

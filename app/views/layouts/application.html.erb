@@ -7,6 +7,11 @@
   </head>
 
   <body>
+    <%= link_to 'Home', '/' %>
+    <%= link_to 'Login', '/login' %>
+    <%= link_to 'Sign Up', '/signup' %>
     <%= yield %>
   </body>
+  <%= javascript_include_tag "application" %>
 </html>
+

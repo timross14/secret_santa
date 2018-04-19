@@ -1,3 +1,6 @@
+
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
@@ -7,7 +10,6 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= link_to user.name, user.list %></td>
-        <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
